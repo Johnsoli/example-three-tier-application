@@ -1,4 +1,5 @@
 import { getTasks, createTask, toggleTask } from './actions';
+import WeatherWidget from './components/WeatherWidget';
 
 export default async function Home() {
   const tasks = await getTasks();
@@ -9,6 +10,9 @@ export default async function Home() {
         <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-8">
           To-Do List
         </h1>
+
+        {/* Weather Widget */}
+        <WeatherWidget />
 
         {/* Add task form */}
         <form action={createTask} className="flex gap-2 mb-8">
